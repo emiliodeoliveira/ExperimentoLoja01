@@ -1,16 +1,22 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * 
+ * @author Emilio de Oliveira
+ * @version 0.1
+ * @since 0.1
+ * 
+  */
 public class Principal {
 	private static final Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		List<Produto> produto = new ArrayList<>();
 		List<Carrinho> carrinho = new ArrayList<>();
+		// Inserir itens para fins de teste.
 		produto.add(new Produto("Camisa", 90.0, "CAMIS9018"));
 		produto.add(new Produto("Calça", 150.0, "CALCS9318"));
-		//listarProdutos(produto);	
 
 		while (true) {
 			switch (digita(menu()).charAt(0)) {
@@ -31,8 +37,7 @@ public class Principal {
 	}
 
 	public static void listarProdutos (List<Produto> mostraProd) {
-		for (int i = 0; i < mostraProd.size(); i++)
-		{
+		for (int i = 0; i < mostraProd.size(); i++)	{
 			System.out.println(i+" - "+mostraProd.get(i));
 		}
 	}
@@ -54,8 +59,7 @@ public class Principal {
 	}
 
 	public static void mostraCarrinho (List<Carrinho> mostraCarrinho) {
-		for (int i = 0; i < mostraCarrinho.size(); i++)
-		{
+		for (int i = 0; i < mostraCarrinho.size(); i++){
 			System.out.println(i+" - "+mostraCarrinho.get(i));
 		}
 	}	
