@@ -5,15 +5,17 @@ public class Produto {
 	private String skuProduto;
 	//private static double descontoProduto;
 	
-	Produto(){
+	public Produto(){
 		
 	}
 	
-	Produto(String nome, double preco, String sku){
+	public Produto(String nome, double preco, String sku){
 		this.nomeProduto = nome;
 		this.precoProduto = preco;
 		this.skuProduto = sku;
 	}
+	
+	
 	
 	/*
 	double precoComDesconto() {
@@ -21,9 +23,33 @@ public class Produto {
 	}
 	*/
 
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
+
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
+	}
+
+	public double getPrecoProduto() {
+		return precoProduto;
+	}
+
+	public void setPrecoProduto(double precoProduto) {
+		this.precoProduto = precoProduto;
+	}
+
+	public String getSkuProduto() {
+		return skuProduto;
+	}
+
+	public void setSkuProduto(String skuProduto) {
+		this.skuProduto = skuProduto;
+	}
+
 	@Override
 	public String toString() {
-		return "Nome: " + nomeProduto + ", Preço: R$ " + precoProduto + ", SKU: " + skuProduto;
+		return "Nome: " + nomeProduto + ", Preï¿½o: R$ " + precoProduto + ", SKU: " + skuProduto;
 	}
 	
 	

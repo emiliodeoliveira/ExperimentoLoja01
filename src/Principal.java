@@ -16,10 +16,10 @@ public class Principal {
 		List<Carrinho> carrinho = new ArrayList<>();
 		// Inserir itens para fins de teste.
 		produto.add(new Produto("Camisa", 90.0, "CAMIS9018"));
-		produto.add(new Produto("Cal�a", 150.0, "CALCS9318"));
+		produto.add(new Produto("Cal�a", 150.0, "CALCS9318"));
 
 		while (true) {
-			switch (digita(menu()).charAt(0)) {
+			switch (readString(menu()).charAt(0)) {
 			case '1':
 				listarProdutos(produto);
 				break;
@@ -27,13 +27,27 @@ public class Principal {
 				cadastraProduto(produto);
 				break;
 			case '3':
+				comprarProduto(produto, carrinho);
+				break;			
+			case '4':
 				mostraCarrinho(carrinho);
 				break;
-			case '4':
+			case '5':
 				System.exit(0);
 				break;
 			}
 		}		
+	}
+
+	private static void comprarProduto(List<Produto> prod, List<Carrinho> carr) {
+		listarProdutos(prod);
+		/* ----------
+		 * Método ainda em construção
+		 * ----------
+		 * 
+		 * int indProd = readInt("Deseja comprar qual produto?");
+		carr.add(indProd, prod);
+		*/
 	}
 
 	public static void listarProdutos (List<Produto> mostraProd) {
@@ -52,11 +66,18 @@ public class Principal {
 		prod.add(new Produto(p1,p2,p3));
 	}
 
-	private static String digita(String menu) {
+	private static String readString(String msg) {
 		Scanner a = new Scanner(System.in);
-		System.out.println(menu);
+		System.out.println(msg);
 		return a.nextLine();
 	}
+	
+	private static int readInt(String msg) {
+		Scanner a = new Scanner(System.in);
+		System.out.println(msg);
+		return a.nextInt();
+	}
+
 
 	public static void mostraCarrinho (List<Carrinho> mostraCarrinho) {
 		for (int i = 0; i < mostraCarrinho.size(); i++){
@@ -69,8 +90,9 @@ public class Principal {
 		menu += "\nLoja de produtos:";
 		menu += "\n  1 - Ver produtos.";
 		menu += "\n  2 - Cadastrar produtos.";
-		menu += "\n  3 - Carrinho.";
-		menu += "\n  4 - Sair.";
+		menu += "\n  3 - Comprar produto.";
+		menu += "\n  4 - Carrinho.";
+		menu += "\n  5 - Sair.";
 		menu += "\nEscolha: ";
 		return menu;
 	}
